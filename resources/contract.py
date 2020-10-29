@@ -4,7 +4,7 @@ from flask_jwt_extended import jwt_required, get_jwt_identity
 from flask_restful import Resource
 
 
-class ContractApi(Resource):
+class ContractsApi(Resource):
     def get(self):
         contracts = Contract.objects().to_json()
         return Response(contract, mimetype="application/json", status=200)
