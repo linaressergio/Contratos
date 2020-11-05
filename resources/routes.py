@@ -1,7 +1,7 @@
-from .client import ClientsApi, ClientApi
+from .contract import ContractsApi, ContractApi
 
 
 def initialize_routes(api):
-    api.add_resource(ClientsApi, '/api/clients')
-    api.add_resource(ClientApi, '/api/client/<id>')
+    api.add_resource(ContractsApi, '/api/contracts')
+    api.add_resource(ContractApi, '/api/contract/<id>')
 
