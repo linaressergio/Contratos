@@ -1,8 +1,12 @@
 from .db import db
 
-class Client(db.Document):
-    doc_id = db.StringField(required=True, unique=True)
-    name = db.StringField(required=True)
+class Contract(db.Document):
+    contract_id = db.StringField(required=True, unique=True)
+    plan = db.StringField(required=True)
+    insurance_name = db.StringField(required=True)
+    state = db.StringField(required=True)
     last_name = db.StringField(required=True)
-    preexistence = db.ListField(db.StringField(), required=True)
+    principal_name = db.StringField(required=True)
+    principal_id = db.StringField(required=True, unique=True)
+    beneficiary = db.ListField(db.StringField(), required=True)
 
