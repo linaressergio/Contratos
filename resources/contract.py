@@ -7,7 +7,7 @@ from flask_restful import Resource
 class ContractsApi(Resource):
     def get(self):
         contracts = Contract.objects().to_json()
-        return Response(contract, mimetype="application/json", status=200)
+        return Response(contracts, mimetype="application/json", status=200)
 
     @jwt_required
     def post(self):
