@@ -1,6 +1,6 @@
-""" Class representing a client
+""" Class representing a contract
     """
-class Client():
+class Contract():
 
     def __init__(self, contract_id, plan, insurance_name,state,last_name,principal_name,principal_id):
         """ init contract"""
