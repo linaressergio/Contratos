@@ -1,15 +1,15 @@
 import unittest
 
-from service.client import Client
+from service.contract import Contract
 
 
-class ClientTestCase(unittest.TestCase):
+class ContractTestCase(unittest.TestCase):
     def setUp(self):
-        self.test_client = Client('mock name', 'mock last', '')
+        self.test_contract = Contract('123', '10', 'COLSANITAS', 'ACTIVO', 'Perez', 'Pablo', '147852')
 
-    def test_name_last_name(self):
-        expected_name = 'mock name mock last'
-        self.assertEqual(self.test_client.get_formatted_name(), expected_name)
+    def test_validate_contract(self):
+        self.assertEqual(self.test_contract.validate_contract(self.test_contract,123),true)
+        
 
     def test_name_add_preexistence(self):
         self.assertEqual(len(self.test_client.get_all_preexistence()), 0)
