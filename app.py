@@ -1,12 +1,12 @@
 """ importando configparser  """
-import configparser as cp
+import configparser as configparser
 from flask import Flask, Response, json
 from flask_jwt_extended import JWTManager
 from database.db import initialize_db
 from flask_restful import Api
 from resources.routes import initialize_routes
 
-config = cp.ConfigParser()
+config = configparser.ConfigParser()
 config.read('config.properties')
 
 app = Flask(__name__)
