@@ -1,4 +1,8 @@
 from flask_mongoengine import MongoEngine
+"""
+high level support for doing this and that.
+"""
+
 
 db = MongoEngine()
 
