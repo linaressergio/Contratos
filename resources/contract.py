@@ -29,9 +29,9 @@ class ContractApi(Resource):
         contract = Contract.objects.get(contract_id=contract_id).delete()
         return '', 200
 
-    def get(self, id):
+    def get(self, contract_id):
         try:
-            contract = Contract.objects.get(id=id).to_json()
+            contract = Contract.objects.get(contract_id=contract_id).to_json()
             return Response(contract, mimetype="application/json", status=200)
         except Exception as error:
             return Response(error, status=400, mimetype='application/json')
