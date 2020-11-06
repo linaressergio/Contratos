@@ -28,18 +28,18 @@ class Contract():
         """ Consultar los beneficiarios"""
         return self.beneficiary
                                                                           
-    def get_beneficiary(self, id_beneficiary):
+    def get_beneficiary(self, beneficiary):
         """ Consultar beneficiario"""
-        if p_index >= len(self.preexistence):
+        if p_index >= len(self.beneficiary):
             return 'There is no such preexistence'
-        return self.preexistence[p_index]
+        return self.beneficiary[p_index]
 
-    def delete_beneficiary(self, id_beneficiary):
+    def delete_beneficiary(self, beneficiary):
         """ Elimina beneficiario"""
-        self.beneficiary.remove(id_beneficiary)
-        return len(self.id_beneficiary) - 1
+        self.beneficiary.remove(beneficiary)
+        return len(self.beneficiary) - 1
 
     
 if __name__ == '__main__':
-    contract_instance = contract('123', '10', 'COLSANITAS', 'A', 'Perez', 'Pablo', '147852')
+    contract_instance = Contract('123', '10', 'COLSANITAS', 'A', 'Perez', 'Pablo', '147852')
     print('Contract 123 has been added')
