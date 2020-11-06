@@ -13,8 +13,11 @@ class ContractsApi(Resource):
     def post(self):
         try:
             body = request.get_json()
+            print("data as string {}".format(json.dumps(body)))
             contracts = Contract(**body).save()
+            print("2")
             contract_id  = contracts.contract_id 
+            print("3")
             return {'contract_id ': str(contract_id)}, 200
         except Exception as error:
             return Response(error, status=400, mimetype='application/json')
