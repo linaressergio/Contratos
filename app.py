@@ -1,7 +1,7 @@
 """ importando configparser  """
 import configparser as configparser
 from flask import Flask, Response, json
-from flask_jwt_extended import JWTManager
+#from flask_jwt_extended import JWTManager
 from database.db import initialize_db
 from flask_restful import Api
 from resources.routes import initialize_routes
@@ -19,7 +19,6 @@ app.config['MONGODB_SETTINGS'] = {
 }
 
 @app.route('/')
-
 #metodo okk
 def base():
     return Response(response=json.dumps({"Status": "UP!!!",
