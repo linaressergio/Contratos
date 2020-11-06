@@ -21,7 +21,8 @@ app.config['MONGODB_SETTINGS'] = {
 
 @app.route('/')
 
-"""  metodo rta ok
+
+""" rta ok 
     """
 def base():
     return Response(response=json.dumps({"Status": "UP!!!", 
