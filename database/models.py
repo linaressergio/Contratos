@@ -13,4 +13,3 @@ class Contract(db.Document):
     principal_name = db.StringField(required=True)
     principal_id = db.StringField(required=True, unique=True)
     beneficiary = db.ListField(db.StringField(), required=True)
-
