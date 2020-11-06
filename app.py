@@ -22,8 +22,7 @@ app.config['MONGODB_SETTINGS'] = {
 @app.route('/')
 
 
-""" rta ok 
-    """
+""" rta ok """
 def base():
     return Response(response=json.dumps({"Status": "UP!!!", 
                                          'db_host': config.get(section='database_config', option='host')}),
