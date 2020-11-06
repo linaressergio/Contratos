@@ -1,6 +1,5 @@
-""" importando configparser
-    """
-import configparser as cp
+""" importando configparser  """
+import configParser as cp
 from flask import Flask, Response, json
 from flask_jwt_extended import JWTManager
 from database.db import initialize_db
