@@ -8,15 +8,12 @@ class ContractsApi(Resource):
     def get(self):
         contracts = Contract.objects().to_json()
         return Response(contracts, mimetype="application/json", status=200)
-
     
     def post(self):
         body = request.get_json()
         contracts = Contract(**body).save()
-        contract_id  = contracts.contract_id 
+        contract_id  = contracts.contract_id
         return {'contract_id ': str(contract_id)}, 200
-
-
 
 class ContractApi(Resource):
     
@@ -24,8 +21,7 @@ class ContractApi(Resource):
         body = request.get_json()
         Contract.objects.get(contract_id=contract_id).update(**body)
         return '', 200
-    
-        
+            
     def delete(self, contract_id):
         contract = Contract.objects.get(contract_id=contract_id).delete()
         return '', 200
