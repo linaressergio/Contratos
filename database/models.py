@@ -2,8 +2,8 @@
     """
 from .db import db
 
-""" Creando clase contrato """
 class Contract(db.Document):
+    """ Creando clase contrato """
     contract_id = db.StringField(required=True, unique=True)
     plan = db.StringField(required=False)
     insurance_name = db.StringField(required=False)
