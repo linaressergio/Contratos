@@ -28,7 +28,7 @@ class Contract():
         """ Consultar los beneficiarios"""
         return self.beneficiary
                                                                           
-    def get_beneficiary(self, beneficiary):
+    def get_beneficiary(self, p_index):
         """ Consultar beneficiario"""
         if p_index >= len(self.beneficiary):
             return 'There is no such preexistence'
