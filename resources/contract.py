@@ -14,7 +14,7 @@ class ContractsApi(Resource):
         try:
             body = request.get_json()
             print(body)
-            contracts = Contract.insert_one(body)
+            contracts = Contracts(**body).save()
             print("2")
             contract_id  = contracts.contract_id 
             print("3")
@@ -29,8 +29,8 @@ class ContractApi(Resource):
         body = request.get_json()
         Contract.objects.get(contract_id=contract_id).update(**body)
         return '', 200
-
     
+        
     def delete(self, contract_id):
         contract = Contract.objects.get(contract_id=contract_id).delete()
         return '', 200
