@@ -14,7 +14,7 @@ class ContractsApi(Resource):
         try:
             body = request.get_json()
             print(body)
-            contracts = Contract.save(body)
+            contracts = Contract.save({"contract_id" : "1"})
             print("2")
             contract_id  = contracts.contract_id 
             print("3")
