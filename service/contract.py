@@ -13,9 +13,9 @@ class Contract():
         self.principal_id = principal_id
         self.beneficiary = []
 
-    def validate_contract(self,contract_id):
+   # def validate_contract(self,contract_id):
         """ validar contrato"""
-        return (self.contract_id=contract_id and self.state="ACTIVO" and (len(self.beneficiary >0) 
+    #    return (self.contract_id=contract_id and self.state="ACTIVO" and (len(self.beneficiary >0) 
         
         
     def add_beneficiary(self, id_beneficiary):
