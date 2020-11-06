@@ -9,7 +9,7 @@ class ContractsApi(Resource):
         contracts = Contract.objects().to_json()
         return Response(contracts, mimetype="application/json", status=200)
 
-    @jwt_required
+    
     def post(self):
         body = request.get_json()
         contracts = Contract(**body).save()
@@ -18,13 +18,13 @@ class ContractsApi(Resource):
 
 
 class ContractApi(Resource):
-    @jwt_required
+    
     def put(self, contract_id):
         body = request.get_json()
         Contract.objects.get(contract_id=contract_id).update(**body)
         return '', 200
 
-    @jwt_required
+    
     def delete(self, contract_id):
         contract = Contract.objects.get(contract_id=contract_id).delete()
         return '', 200
