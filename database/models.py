@@ -1,8 +1,8 @@
-""" importando base de datos
+""" Importando base de datos
     """
 from .db import db
 
-""" creando clase contrato
+""" Creando clase contrato
     """
 class Contract(db.Document):
     contract_id = db.StringField(required=True, unique=True)
