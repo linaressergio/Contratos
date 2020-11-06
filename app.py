@@ -19,7 +19,8 @@ app.config['MONGODB_SETTINGS'] = {
 }
 
 @app.route('/')
-""" metodo okk """
+
+#metodo okk
 def base():
     return Response(response=json.dumps({"Status": "UP!!!",
                               'db_host': config.get(section='database_config', option='host')}),
