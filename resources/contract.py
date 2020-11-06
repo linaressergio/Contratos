@@ -11,11 +11,12 @@ class ContractsApi(Resource):
 
     
     def post(self):
-        body = request.get_json()
-        contracts = Contract(**body).save()
-        contract_id  = contracts.contract_id 
-        return {'contract_id ': str(contract_id)}, 200
-    except Exception as error:
+        try:
+            body = request.get_json()
+            contracts = Contract(**body).save()
+            contract_id  = contracts.contract_id 
+            return {'contract_id ': str(contract_id)}, 200
+        except Exception as error:
             return Response(error, status=400, mimetype='application/json')
 
 
