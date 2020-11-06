@@ -27,6 +27,12 @@ class Contract():
     def get_all_beneficiary(self):
         """ Consultar los beneficiarios"""
         return self.beneficiary
+                                                                          
+    def get_beneficiary(self, id_beneficiary):
+        """ Consultar beneficiario"""
+        if p_index >= len(self.preexistence):
+            return 'There is no such preexistence'
+        return self.preexistence[p_index]
 
     def delete_beneficiary(self, id_beneficiary):
         """ Elimina beneficiario"""
