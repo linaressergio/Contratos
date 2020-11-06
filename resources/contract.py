@@ -34,7 +34,7 @@ class ContractApi(Resource):
 
     def get(self, contract_id):
         try:
-            contract = Contract.objects.get(contract_id=contract_id).to_json()
+            contract = Contract.objects.filter(contract_id=contract_id).to_json()
             return Response(contract, mimetype="application/json", status=200)
         except Exception as error:
             return Response(error, status=400, mimetype='application/json')
