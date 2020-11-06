@@ -1,3 +1,5 @@
+""" importando configparser 
+    """
 import configparser as configparser
 from flask import Flask, Response, json
 from flask_jwt_extended import JWTManager
@@ -13,12 +15,17 @@ app = Flask(__name__)
 api = Api(app)
 
 app.config['MONGODB_SETTINGS'] = {
-    'host': config.get(section='database_config', option='host') + config.get(section='database_config', option='database')
+    'host': config.get(section='database_config', option='host') 
+    + config.get(section='database_config', option='database')
 }
 
 @app.route('/')
+
+"""  metodo rta ok
+    """
 def base():
-    return Response(response=json.dumps({"Status": "UP!!!", 'db_host': config.get(section='database_config', option='host')}),
+    return Response(response=json.dumps({"Status": "UP!!!", 
+                                         'db_host': config.get(section='database_config', option='host')}),
                     status=200,
                     mimetype='application/json')
 
